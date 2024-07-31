@@ -81,6 +81,10 @@ class Enigma:
             dict_raw: list[str] = cont[2].replace(" ", "").replace("'", "").rstrip("}").lstrip("{").split(",")
             dict_clean: dict[str, str] = {e[0]: e[2] for e in dict_raw}
             plugboard.configuration = dict_clean
+
+            self.first_rotor = r1
+            self.second_rotor = r2
+            self.third_rotor = r3
           
         except Exception as e:
             print("Error loading File:", e)
